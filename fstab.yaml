@@ -1,4 +1,4 @@
-iemountpoints:
+mountpoints:
   /:
     url: "https://author-p125048-e1434060.adobeaemcloud.com/bin/franklin.delivery/samircaus/elsiewalk/main"
     type: "markup"
