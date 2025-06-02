@@ -114,8 +114,7 @@ async function loadEager(doc) {
   if (runExperimentation) {
     await runExperimentation(document, experimentationConfig);
   }
-  document.addEventListener('aem:experimentation', (ev) => {
-    
+  document.addEventListener('aem:experimentation', () => {
     // integrate reporting..
   });
 
@@ -159,8 +158,6 @@ async function loadLazy(doc) {
     await showExperimentationOverlay(document, experimentationConfig);
   }
   import('../tools/sidekick/aem-experimentation.js');
-
-
 }
 
 /**
