@@ -21,6 +21,14 @@ const experimentationConfig = {
   },
 };
 
+const AUDIENCES = {
+  mobile: () => window.innerWidth < 600,
+  desktop: () => window.innerWidth >= 600,
+}
+
+
+document.addEventListener('aem:experimentation', (ev) => console.log(ev.detail));
+
 let runExperimentation;
 let showExperimentationOverlay;
 const isExperimentationEnabled = document.head.querySelector('[name^="experiment"],[name^="campaign-"],[name^="audience-"],[property^="campaign:"],[property^="audience:"]')

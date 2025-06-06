@@ -619,6 +619,9 @@ async function loadBlock(block) {
   return block;
 }
 
+// Maintain a counter for container IDs
+let containerIdCounter = 1;
+
 /**
  * Decorates a block.
  * @param {Element} block The block element
@@ -633,7 +636,12 @@ function decorateBlock(block) {
     const blockWrapper = block.parentElement;
     blockWrapper.classList.add(`${shortBlockName}-wrapper`);
     const section = block.closest('.section');
-    if (section) section.classList.add(`${shortBlockName}-container`);
+    if (section) {
+      section.classList.add(`${shortBlockName}-container`);
+      if (!section.dataset.containerId) {
+        section.dataset.containerId = `container-${containerIdCounter++}`;
+      }
+    }
     // eslint-disable-next-line no-use-before-define
     decorateButtons(block);
   }
