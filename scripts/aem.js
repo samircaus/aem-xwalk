@@ -639,6 +639,7 @@ function decorateBlock(block) {
     if (section) {
       section.classList.add(`${shortBlockName}-container`);
       if (!section.dataset.containerId) {
+        // eslint-disable-next-line no-plusplus
         section.dataset.containerId = `container-${containerIdCounter++}`;
       }
     }
